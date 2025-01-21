@@ -49,6 +49,6 @@ const server = http.createServer((req, res) => {
 });
 
 // Server starten (mit Subdomain und Standard-Port 80 für HTTP)
-server.listen(port, hostname, () => {
-    console.log(`Server running at https://${hostname}:${port}/`);
+server.listen(port, () => {
+    console.log(`Server running`);
 });
