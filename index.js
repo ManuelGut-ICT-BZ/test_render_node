@@ -3,7 +3,7 @@ const http = require('https');
 // Wenn der Server für eine Subdomain läuft, sollte der Hostname auf die Subdomain gesetzt werden
 // const hostname = 'dummy-nodejs.041er-blj.ch'; // Subdomain eintragen
 // const hostname = '127.0.0.1'; // Für lokales Hosting
-const port = 443; // Standard-Port für HTTP (für HTTPS wäre es 443, falls SSL konfiguriert ist)
+const port = process.env.PORT || 3000; // Standard-Port für HTTP (für HTTPS wäre es 443, falls SSL konfiguriert ist)
 
 const server = http.createServer((req, res) => {
     // CORS-Header hinzufügen, falls externe Zugriffe erwartet werden
