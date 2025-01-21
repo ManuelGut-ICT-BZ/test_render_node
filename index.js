@@ -1,4 +1,4 @@
-const http = require('https');  // SSL verwenden, aber Render übernimmt das SSL-Handling für dich
+const http = require('http');  // SSL verwenden, aber Render übernimmt das SSL-Handling für dich
 
 const port = process.env.PORT || 3000;  // Port aus der Umgebung von Render oder 3000 für lokale Tests
 
