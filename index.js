@@ -1,9 +1,6 @@
-const http = require('https');
+const http = require('https');  // SSL verwenden, aber Render übernimmt das SSL-Handling für dich
 
-// Wenn der Server für eine Subdomain läuft, sollte der Hostname auf die Subdomain gesetzt werden
-// const hostname = 'dummy-nodejs.041er-blj.ch'; // Subdomain eintragen
-// const hostname = '127.0.0.1'; // Für lokales Hosting
-const port = process.env.PORT || 3000; // Standard-Port für HTTP (für HTTPS wäre es 443, falls SSL konfiguriert ist)
+const port = process.env.PORT || 3000;  // Port aus der Umgebung von Render oder 3000 für lokale Tests
 
 const server = http.createServer((req, res) => {
     // CORS-Header hinzufügen, falls externe Zugriffe erwartet werden
@@ -48,7 +45,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-// Server starten (mit Subdomain und Standard-Port 80 für HTTP)
+// Server starten (ohne expliziten Hostnamen, Render übernimmt dies)
 server.listen(port, () => {
-    console.log(`Server running`);
+    console.log(`Server running on port ${port}`);
 });
